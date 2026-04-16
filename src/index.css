@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
 
 :root {
     --primary-color: #5B21B6;
@@ -65,7 +66,7 @@ body {
     color: var(--primary-color);
 }
 
-.nav {
+.mynav {
     display: none;
     position: absolute;
     top: 100%;
@@ -80,7 +81,7 @@ body {
     display: block;
 }
 
-.nav ul {
+.mynav ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -89,7 +90,7 @@ body {
 }
 
 @media (min-width: 1024px) {
-    .nav {
+    .mynav {
         display: flex;
         position: static;
         width: auto;
@@ -98,7 +99,7 @@ body {
     }
 }
 
-.nav-link {
+.navLink {
     display: block;
     text-align: center;
     font-size: 18px;
@@ -108,7 +109,7 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-link:hover {
+.navLink:hover {
     color: var(--hover-color);
 }
 
