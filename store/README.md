@@ -1,0 +1,1 @@
+This is the readme for the backend application. I will keep on adding relevant information as I make progess
