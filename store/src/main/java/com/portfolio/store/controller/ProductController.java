@@ -1,5 +1,7 @@
 package com.portfolio.store.controller;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.portfolio.store.dto.ProductDto;
 import com.portfolio.store.entity.Product;
 import com.portfolio.store.repository.ProductRepository;
 import com.portfolio.store.service.IProductService;
@@ -14,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/products")
 @RequiredArgsConstructor
+@JsonPropertyOrder({"productId","name","description","price","popularity","imageUrl","createdAt"})
 public class ProductController {
 
     private final IProductService iProductService;
@@ -26,8 +29,8 @@ public class ProductController {
 //    }
 
     @GetMapping
-    public List<Product> getProducts() {
-        List<Product> productList = iProductService.getProducts();
+    public List<ProductDto> getProducts() {
+        List<ProductDto> productList = iProductService.getProducts();
         return productList;
     }
 }
