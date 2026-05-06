@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap");
 @import "tailwindcss";
 
-@theme{
-    --font-primary:"Josefin Sans", sans-serif;
-    --color-primary: #5B21B6;
-    --color-dark: #4C1D95;
-    --color-light: #DDD6FE;
-    --color-lighter: #F5F3FF;
+@theme {
+  --font-primary: "Josefin Sans", sans-serif;
+  --color-primary: #5b21b6;
+  --color-dark: #4c1d95;
+  --color-light: #ddd6fe;
+  --color-lighter: #f5f3ff;
 }
