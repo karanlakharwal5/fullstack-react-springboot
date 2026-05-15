@@ -1,7 +1,5 @@
 # Full Stack Web Application with React & Spring Boot
 
-# Full Stack Web Application with React & Spring Boot
-
 Modules implemented so far:
 ## 🚀 Project Modules
 - [x] Product Listing Page
