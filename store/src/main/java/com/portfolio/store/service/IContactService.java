@@ -1,11 +1,11 @@
 package com.portfolio.store.service;
 
+import com.portfolio.store.dto.ContactRequestDto;
 import com.portfolio.store.dto.ProductDto;
-import com.portfolio.store.entity.Product;
 
 import java.util.List;
 
-public interface IProductService {
+public interface IContactService {
 
-    List<ProductDto> getProducts();
+    boolean saveContact(ContactRequestDto contactRequestDto);
 }

@@ -1,27 +1,18 @@
 package com.portfolio.store.controller;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.portfolio.store.dto.ProductDto;
-import com.portfolio.store.entity.Product;
-import com.portfolio.store.repository.ProductRepository;
-import com.portfolio.store.service.IProductService;
+import com.portfolio.store.dto.ContactRequestDto;
+import com.portfolio.store.service.IContactService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/v1/products")
+@RequestMapping("api/v1/contact")
 @RequiredArgsConstructor
 //@CrossOrigin(origins = "http://localhost:5173")
-@JsonPropertyOrder({"productId","name","description","price","popularity","imageUrl","createdAt"})
-public class ProductController {
+//@JsonPropertyOrder({"name","description","price","popularity","imageUrl","createdAt"})
+public class ContactController {
 
-    private final IProductService iProductService;
+    private final IContactService iContactService;
 
 //    We do not need the below block, since @RequiredArgsConstructor will implement this
 //    @Autowired
@@ -30,9 +21,14 @@ public class ProductController {
 //        this.iProductService = iProductService;
 //    }
 
-    @GetMapping
-    public List<ProductDto> getProducts() throws InterruptedException {
-        List<ProductDto> productList = iProductService.getProducts();
-        return productList;
+    @PostMapping
+    public String saveContact(@RequestBody ContactRequestDto contactRequestDto) {
+        boolean isSaved = iContactService.saveContact(contactRequestDto);
+        if (isSaved){
+            return "Request processed successfully.";
+        }
+        else {
+            return "An error occurred. Please try again or contact DEV team";
+        }
     }
 }

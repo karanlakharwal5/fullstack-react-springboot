@@ -9,7 +9,7 @@ import java.time.Instant;
 
 @Getter
 @Setter
-@JsonPropertyOrder({"productId","name","description","price","popularity","imageUrl","createdAt"})
+@JsonPropertyOrder({"name","email","mobileNumber","message"})
 public class ContactRequestDto {
 
     private String name;

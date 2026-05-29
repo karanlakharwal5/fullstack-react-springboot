@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("api/v1/products")
 @RequiredArgsConstructor
 //@CrossOrigin(origins = "http://localhost:5173")
-@JsonPropertyOrder({"productId","name","description","price","popularity","imageUrl","createdAt"})
+//@JsonPropertyOrder({"productId","name","description","price","popularity","imageUrl","createdAt"})
 public class ProductController {
 
     private final IProductService iProductService;
@@ -31,7 +31,7 @@ public class ProductController {
 //    }
 
     @GetMapping
-    public List<ProductDto> getProducts() {
+    public List<ProductDto> getProducts() throws InterruptedException {
         List<ProductDto> productList = iProductService.getProducts();
         return productList;
     }
